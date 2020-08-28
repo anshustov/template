@@ -1,0 +1,65 @@
+#+LaTeX_CLASS: article
+#+LaTeX_CLASS_OPTIONS: [a4paper,14pt]
+#+LATEX_HEADER: \usepackage[left=2cm,right=1cm,top=2.5cm,bottom=1.5cm,bindingoffset=0cm]{geometry}
+
+#+LaTeX-command: "xelatex -shell-escape"
+#+LANGUAGE: ru
+# +LATEX_CMD: xelatex
+
+#+LATEX_HEADER: \usepackage{ifxetex}
+#+LATEX_HEADER: \ifxetex % for xetex
+#+LATEX_HEADER: \usepackage{polyglossia}
+#+LATEX_HEADER: \setdefaultlanguage{english}
+#+LATEX_HEADER: \setotherlanguage{russian}
+#+LATEX_HEADER: \defaultfontfeatures{Ligatures={TeX},Renderer=Basic}
+#+LATEX_HEADER: \setmainfont[Scale=.976]{Times New Roman}
+#+LATEX_HEADER: \linespread{.976}
+#+LATEX_HEADER: \setsansfont{Arial} 
+#+LATEX_HEADER: \setmonofont[Scale=.8]{Hack}
+#+LATEX_HEADER: \newfontfamily\cyrillicfonttt[Script=Cyrillic]{Hack}
+#+LATEX_HEADER: \else
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage[T1,T2A]{fontenc}
+#+LATEX_HEADER: \usepackage[russian,english]{babel}
+#+LATEX_HEADER: \fi
+
+# Убрать синее обрамление в содержании
+#+LATEX_HEADER: \hypersetup{colorlinks=true}
+#+LATEX_HEADER: \hypersetup{colorlinks=true,linkcolor=black}
+
+# #+OPTIONS: toc:nil
+#+LATEX_HEADER: \addto\captionsenglish{\renewcommand\contentsname{Содержание}}
+#+LATEX_HEADER: \usepackage{titlesec}
+#+LATEX_HEADER: \newcommand{\sectionbreak}{\thispagestyle{empty}\clearpage}
+
+# Красная строка в первом абзаце после заголовка
+#+LATEX_HEADER: \usepackage{indentfirst}
+#+LATEX_HEADER: \setlength{\parindent}{2em}
+
+# Запрет переносов
+#+LATEX_HEADER: \tolerance=1
+#+LATEX_HEADER: \emergencystretch=\maxdimen
+#+LATEX_HEADER: \hyphenpenalty=10000
+#+LATEX_HEADER: \hbadness=10000
+
+# Титульный лист
+#+LATEX_HEADER: \makeatletter
+#+LATEX_HEADER: \def\@maketitle{%
+#+LATEX_HEADER: \thispagestyle{empty}
+#+LATEX_HEADER: \null
+#+LATEX_HEADER: \vskip 20em%
+#+LATEX_HEADER: \begin{center}%
+#+LATEX_HEADER: {\@author \par 
+#+LATEX_HEADER: {\setmainfont{Arial}\fontsize{30pt}{36pt}\selectfont\bf \@title \par}
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \vfill 
+#+LATEX_HEADER: Сочи -- \@date \par
+#+LATEX_HEADER: }%
+#+LATEX_HEADER: \end{center}
+#+LATEX_HEADER: \newpage}
+#+LATEX_HEADER: \makeatother
+
+# Обрамить линией все блоки исходного кода
+#+LATEX_HEADER_EXTRA: \usepackage{mdframed}
+#+LATEX_HEADER_EXTRA: \BeforeBeginEnvironment{verbatim}{\begin{mdframed}}
+#+LATEX_HEADER_EXTRA: \AfterEndEnvironment{verbatim}{\end{mdframed}}
