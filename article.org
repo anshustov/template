@@ -4,7 +4,7 @@
 
 #+LaTeX-command: "xelatex -shell-escape"
 #+LANGUAGE: ru
-# +LATEX_CMD: xelatex
+#+LATEX_CMD: xelatex
 
 #+LATEX_HEADER: \usepackage{ifxetex}
 #+LATEX_HEADER: \ifxetex % for xetex
