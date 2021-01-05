@@ -1,5 +1,5 @@
 #+LaTeX_CLASS: article
-#+LaTeX_CLASS_OPTIONS: [a4paper,14pt]
+#+LaTeX_CLASS_OPTIONS: [a4paper,14pt,indentfirst]
 #+LATEX_HEADER: \usepackage[left=2cm,right=1cm,top=2.5cm,bottom=1.5cm,bindingoffset=0cm]{geometry}
 
 #+LaTeX-command: "xelatex -shell-escape"
@@ -31,10 +31,6 @@
 #+LATEX_HEADER: \addto\captionsenglish{\renewcommand\contentsname{Содержание}}
 #+LATEX_HEADER: \usepackage{titlesec}
 #+LATEX_HEADER: \newcommand{\sectionbreak}{\thispagestyle{empty}\clearpage}
-
-# Красная строка в первом абзаце после заголовка
-#+LATEX_HEADER: \usepackage{indentfirst}
-#+LATEX_HEADER: \setlength{\parindent}{2em}
 
 # Запрет переносов
 #+LATEX_HEADER: \tolerance=1
